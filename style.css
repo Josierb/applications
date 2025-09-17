@@ -1,25 +1,47 @@
-/* Sunflower theme (HSL) simplified from your Tailwind tokens */
+/* ===== Sunflower Theme tokens (ported from your Lovable Tailwind design) ===== */
 :root{
   --background: 45 30% 97%;
   --foreground: 25 40% 15%;
+  --primary-glow: 45 100% 75%; /* glow step */
   --sunflower-yellow: 45 100% 60%;
-  --primary-glow: 45 100% 75%;
+  --sunflower-center: 25 80% 35%;
   --leaf-green: 88 50% 55%;
   --leaf-green-light: 88 40% 70%;
   --stem-green: 95 45% 45%;
   --warm-cream: 45 30% 97%;
   --handwritten-brown: 25 40% 25%;
+
+  --gradient-sunflower: linear-gradient(135deg, hsl(var(--sunflower-yellow)), hsl(var(--primary-glow)));
+  --gradient-leaf: linear-gradient(120deg, hsl(var(--leaf-green)), hsl(var(--leaf-green-light)));
+  --gradient-warm: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(45 25% 92%));
+
+  --shadow-soft: 0 4px 20px hsl(var(--sunflower-yellow) / 0.15);
+  --shadow-leaf: 0 2px 12px hsl(var(--leaf-green) / 0.2);
+  --shadow-organic: 0 8px 32px hsl(25 40% 15% / 0.1);
+
+  /* Additional tokens used by index.html inline styles */
+  --sky: #cfefff;
+  --text: 25 40% 16%;
+  --leaf-fill-1: #6cc46c;
+  --leaf-fill-2: #a7e2a7;
+  --leaf-stroke: #2f6b2f;
 }
 
+/* ===== Base ===== */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color:hsl(var(--foreground));
-  background: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(45 25% 92%));
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: var(--sky);
+  overflow-x:hidden;
 }
+.bg-warm{ background: var(--gradient-warm); }
 
+.handwritten{ font-family:"Kalam","Comic Sans MS",cursive; }
+
+/* ===== Layout ===== */
 .screen{
   min-height:100dvh;
   display:flex;
@@ -28,86 +50,268 @@ body{
   position:relative;
   overflow:hidden;
   padding:2rem;
+  z-index:1;
 }
 
-/* Center stack */
 .center{
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1.25rem;
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; align-items:center; gap:1.25rem;
   text-align:center;
 }
 .center h1{
   margin:0;
-  font-size:clamp(2rem, 6vw, 4rem);
+  font-size:clamp(2.25rem, 6vw, 4.25rem);
   line-height:1.1;
-  color:hsl(var(--handwritten-brown));
-  font-family: "Kalam", "Comic Sans MS", cursive;
+  color:hsl(var(--text));
+  text-shadow: 0 2px 0 rgba(255,255,255,.4);
 }
+
+/* Avatar (Lovable-style: gradient ring + photo inside) */
 .avatar{
-  width:8rem;height:8rem;border-radius:50%;
-  background: radial-gradient(circle at 35% 35%, hsl(var(--primary-glow)), hsl(var(--sunflower-yellow)));
-  border:4px solid hsl(25 80% 35%);
-  box-shadow: 0 8px 32px hsl(25 40% 15% / .1);
+  width:10rem; height:10rem; border-radius:50%;
+  display:grid; place-items:center;
+  background: var(--gradient-sunflower);
+  border:4px solid hsl(var(--sunflower-center));
+  box-shadow: var(--shadow-organic);
+  overflow:hidden;
 }
-.center-links{
-  display:flex;flex-direction:column;gap:.5rem;
-}
-.center-links a{
+.avatar img{ width:8rem; height:8rem; border-radius:50%; object-fit:cover; }
+
+/* Center links */
+.center-links{ display:flex; flex-direction:column; gap:.65rem; }
+.center-link{
   font-family:"Kalam","Comic Sans MS",cursive;
-  font-size:1.125rem;
+  font-size:1.15rem;
   color:hsl(var(--handwritten-brown));
   text-decoration:none;
+  transition: transform .2s ease, color .2s ease;
+  display:inline-block;
 }
-.center-links a:hover{opacity:.75}
+.center-link:hover{ transform:scale(1.05); color:hsl(var(--sunflower-center)); }
 
-/* Sunflowers */
+/* ===== Sunflowers ===== */
 .sunflower{
   position:absolute; top:50%; transform:translateY(-50%);
   width:8rem; height:24rem;
+  z-index:1;
 }
 .sunflower.left{ left:1rem }
 .sunflower.right{ right:1rem }
 @media (min-width: 900px){
-  .sunflower.left{ left:4rem }
-  .sunflower.right{ right:4rem }
+  .sunflower.left{ left:4.5rem }
+  .sunflower.right{ right:4.5rem }
 }
 
+/* Head with hover spin (to match Lovable group-hover rotate) */
 .head{
   width:8rem;height:8rem; display:block; margin-inline:auto;
   transition: transform .7s ease-in-out;
 }
 .head:hover{ transform: rotate(360deg) }
 
+/* Stem */
 .stem{
   position:absolute; left:50%; transform:translateX(-50%);
-  top:8rem; width:.5rem; height:18rem; border-radius:1rem;
+  top:8rem; width:.6rem; height:18rem; border-radius:1rem;
   background:hsl(var(--stem-green));
+  box-shadow: inset 0 0 10px rgba(0,0,0,.08);
 }
 
-/* Leaves as links */
-.leaf{
-  position:absolute;
-  width:5.5rem;height:3.25rem;border-radius:999px;
-  background: linear-gradient(120deg, hsl(var(--leaf-green)), hsl(var(--leaf-green-light)));
-  box-shadow: 0 2px 12px hsl(var(--leaf-green) / .2);
-  display:flex;align-items:center;justify-content:center;
+/* SVG Leaves as links (from index.html) */
+.leaf-link{
+  position:absolute; display:flex; align-items:center; justify-content:center;
   text-decoration:none;
-  transform-origin:center;
-  transition: transform .25s ease, opacity .25s ease;
+  transition: transform .22s ease, filter .22s ease;
 }
-.leaf span{
-  font-family:"Kalam","Comic Sans MS",cursive;
-  color:hsl(var(--handwritten-brown));
-  font-size:.9rem;
-}
-.leaf:hover{ transform: scale(1.05) rotate(2deg) }
+.leaf-link.left { transform-origin: 0% 50% }
+.leaf-link.right{ transform-origin: 100% 50% }
+/* positions */
+.left.top    { left:-26px; top:148px; transform: rotate(16deg) }
+.left.bottom { left:-26px; top:232px; transform: rotate(18deg) }
+.right.top   { right:-26px; top:148px; transform: rotate(-16deg) }
+.right.bottom{ right:-26px; top:232px; transform: rotate(-18deg) }
 
-/* Placement relative to stem start (8rem head + offset) */
-.leaf.left.top    { left:-1.25rem; top: 11.5rem; transform: rotate(12deg) }
-.leaf.left.bottom { left:-1.25rem; top: 17.5rem; transform: rotate(12deg) }
-.leaf.right.top   { right:-1.25rem; top: 11.5rem; transform: rotate(-12deg) }
-.leaf.right.bottom{ right:-1.25rem; top: 17.5rem; transform: rotate(-12deg) }
+.leaf-svg{
+  width:7.8rem; height:4.4rem; display:block;
+  filter: drop-shadow(0 6px 18px rgba(47,107,47,0.18));
+}
+.leaf-text{
+  position:absolute;
+  top:50%; left:50%; transform:translate(-50%,-50%);
+  font-family:"Kalam","Comic Sans MS",cursive;
+  color:hsl(var(--text));
+  font-size:1rem; white-space:nowrap;
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+  user-select:none;
+  pointer-events:none;
+}
+.leaf-link:hover{ transform: translateY(-2px) scale(1.12) rotate(var(--rot,0deg)); filter: brightness(1.05) }
+.left.top:hover    { --rot: 10deg }
+.left.bottom:hover { --rot: 12deg }
+.right.top:hover   { --rot: -10deg }
+.right.bottom:hover{ --rot: -12deg }
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .head{ transition:none }
+  .head:hover{ transform:none }
+  .center-link:hover{ transform:none }
+  .leaf-link{ transition:none }
+  .leaf-link:hover{ transform:none; filter:none }
+}
+
+/* ===== Moving clouds (from index.html) ===== */
+.clouds, .clouds2{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .8;
+  background-repeat: repeat-x;
+  background-position: 0 10%;
+  background-size: 600px auto;
+  animation: drift 60s linear infinite;
+  will-change: background-position;
+}
+.clouds2{
+  opacity:.5;
+  background-position: 0 45%;
+  background-size: 800px auto;
+  animation: drift2 95s linear infinite;
+}
+/* SVG background tiles embedded as data URIs */
+.clouds{
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27600%27%20height%3D%27220%27%20viewBox%3D%270%200%20600%20220%27%3E%3Cdefs%3E%3Cfilter%20id%3D%27b%27%20x%3D%27-50%25%27%20y%3D%27-50%25%27%20width%3D%27200%25%27%20height%3D%27200%25%27%3E%3CfeGaussianBlur%20stdDeviation%3D%276%27/%3E%3C/filter%3E%3C/defs%3E%3Cg%20fill%3D%27white%27%20filter%3D%27url(%23b)%27%20opacity%3D%270.9%27%3E%3Cellipse%20cx%3D%2780%27%20cy%3D%2780%27%20rx%3D%2770%27%20ry%3D%2730%27/%3E%3Cellipse%20cx%3D%27140%27%20cy%3D%2785%27%20rx%3D%2760%27%20ry%3D%2728%27/%3E%3Cellipse%20cx%3D%27200%27%20cy%3D%2778%27%20rx%3D%2755%27%20ry%3D%2724%27/%3E%3Cellipse%20cx%3D%27340%27%20cy%3D%2760%27%20rx%3D%2785%27%20ry%3D%2735%27/%3E%3Cellipse%20cx%3D%27410%27%20cy%3D%2765%27%20rx%3D%2770%27%20ry%3D%2730%27/%3E%3Cellipse%20cx%3D%27470%27%20cy%3D%2762%27%20rx%3D%2750%27%20ry%3D%2722%27/%3E%3Cellipse%20cx%3D%27250%27%20cy%3D%27170%27%20rx%3D%2780%27%20ry%3D%2734%27/%3E%3Cellipse%20cx%3D%27330%27%20cy%3D%27168%27%20rx%3D%2760%27%20ry%3D%2728%27/%3E%3Cellipse%20cx%3D%27390%27%20cy%3D%27172%27%20rx%3D%2750%27%20ry%3D%2722%27/%3E%3C/g%3E%3C/svg%3E");
+}
+.clouds2{
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27800%27%20height%3D%27220%27%20viewBox%3D%270%200%20800%20220%27%3E%3Cdefs%3E%3Cfilter%20id%3D%27b%27%20x%3D%27-50%25%27%20y%3D%27-50%25%27%20width%3D%27200%25%27%20height%3D%27200%25%27%3E%3CfeGaussianBlur%20stdDeviation%3D%275%27/%3E%3C/filter%3E%3C/defs%3E%3Cg%20fill%3D%27white%27%20filter%3D%27url(%23b)%27%20opacity%3D%270.8%27%3E%3Cellipse%20cx%3D%27120%27%20cy%3D%27120%27%20rx%3D%2790%27%20ry%3D%2736%27/%3E%3Cellipse%20cx%3D%27200%27%20cy%3D%27118%27%20rx%3D%2770%27%20ry%3D%2728%27/%3E%3Cellipse%20cx%3D%27520%27%20cy%3D%2790%27%20rx%3D%27100%27%20ry%3D%2740%27/%3E%3Cellipse%20cx%3D%27610%27%20cy%3D%2792%27%20rx%3D%2770%27%20ry%3D%2728%27/%3E%3Cellipse%20cx%3D%27700%27%20cy%3D%2795%27%20rx%3D%2755%27%20ry%3D%2724%27/%3E%3C/g%3E%3C/svg%3E");
+}
+@keyframes drift {
+  from { background-position: 0 10% }
+  to   { background-position: -600px 10% }
+}
+@keyframes drift2 {
+  from { background-position: 0 45% }
+  to   { background-position: -800px 45% }
+}
+
+/* ===== About Page ===== */
+/* make About page start at top instead of centered like home */
+.about-page{
+  display:block;            /* override .screen flex */
+  min-height:auto;
+  padding: 4.5rem 1rem 3rem;
+  color: hsl(var(--handwritten-brown));
+}
+/* header/title/description */
+.about-header{
+  max-width: 900px;
+  margin: 4.5rem auto 2rem auto;
+  text-align:center;
+  position:relative;
+  z-index:2;
+}
+.about-header h1{ margin:0 0 .5rem 0; font-size: clamp(2rem,5vw,3rem); }
+.about-description{
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: "Kalam","Comic Sans MS",cursive;
+  color:hsl(var(--handwritten-brown));
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+/* section grouping */
+.about-section{ max-width:1100px; margin:2rem auto; padding:0 1rem }
+.about-section h2{
+  margin:1.5rem 0 1rem 0;
+  font-size: clamp(1.4rem,3.5vw,2rem);
+  color:hsl(var(--handwritten-brown));
+  text-align:left;
+}
+/* back link nav */
+.back-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  text-decoration: none;
+  color: hsl(25, 40%, 25%);
+  font-family: 'Kalam', cursive;
+  font-size: 1.1rem;
+}
+
+/* scattered gallery */
+.about-gallery {
+  max-width: 980px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.25rem; /* vertical spacing between rows */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem; /* spacing between image and caption */
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.row img {
+  width: 60%;
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.14);
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  display:block; /* remove baseline whitespace */
+}
+
+.row p {
+  flex: 1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: hsl(var(--handwritten-brown));
+  font-family: 'Kalam', cursive;
+  margin: 0; /* rely on row gap for spacing */
+}
+
+@media (max-width: 750px) {
+  .row, .row.reverse {
+    flex-direction: column;
+  }
+  .row img {
+    width: 100%;
+    aspect-ratio: auto;
+  }
+  .row{ gap: 1rem } /* tighter spacing on small screens */
+}
+
+/* ===== College page (scoped; does NOT override global body) ===== */
+.college-page {
+  /* inherits global body background: var(--sky) + clouds */
+  color: hsl(25, 40%, 25%);
+  font-family: 'Kalam', cursive;
+}
+
+.college-page .back-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  text-decoration: none;
+  color: hsl(25, 40%, 25%);
+  font-family: 'Kalam', cursive;
+}
+
+/* Side-by-side photo rows (can be global if you want) */
+.photo-row {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.photo-row img {
+  width: 50%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}

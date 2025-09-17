@@ -3,15 +3,161 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>college — Josephine Burke</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>College — Josephine Burke</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- moving clouds background (same as Work page) -->
+  <div class="clouds"></div>
+  <div class="clouds2"></div>
+
   <main class="screen" style="align-items:flex-start; padding-top:3rem;">
-    <a href="index.html" style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
-    <section class="center" style="max-width:800px;">
-      <h1>About Me</h1>
-      <p>Write a short bio here…</p>
+    <a href="index.html"
+       style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
+
+    <!-- stretch children so articles are flush-left -->
+    <section class="center" style="max-width:850px; text-align:left; align-items:stretch;">
+      <h1 class="handwritten" style="align-self:flex-start;">College Experiences</h1>
+
+      <!-- CTF Events -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Capture the Flag (CTF)</h2>
+        <p>
+          My first CTF was at <strong>Galway University</strong>, which got me hooked on hands-on security.
+          My second was <strong>Zero Days</strong>, where our team <strong>ranked in the open category</strong>.
+          These events sharpened skills in web, crypto, reversing, OSINT, and fast teamwork under pressure.
+        </p>
+        <!-- side-by-side photos -->
+        <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap; justify-content:center;">
+          <img src="college/IMG_6172.jpg" alt="CTF at Galway" 
+               style="max-width:48%; border-radius:12px; display:block; height:auto; object-fit:cover;">
+          <img src="college/IMG_4479.JPG" alt="Zero Days CTF" 
+               style="max-width:48%; border-radius:12px; display:block; height:auto; object-fit:cover;">
+        </div>
+      </article>
+
+      <!-- Essentials to Entrepreneurship -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Essentials to Entrepreneurship (UCD Innovation Academy)</h2>
+        <p>
+          I completed <strong>Essentials to Entrepreneurship</strong> in the <strong>Innovation Academy at UCD</strong>, 
+          an experiential course designed to help students think and work like entrepreneurs. We spent significant time 
+          learning the mindset through <strong>lessons</strong> (customer discovery, value propositions, business models, 
+          branding, and pitching), <strong>activities</strong> (rapid prototyping, market interviews, and testing assumptions), 
+          and structured <strong>reflections</strong> that pushed us to iterate and improve based on evidence.
+        </p>
+
+        <p>
+          We then put those skills into practice with a team project. Our brief was to design a product that is 
+          <strong>sustainable</strong>, <strong>ready-to-eat</strong>, and <strong>attractive to the Irish market</strong>. 
+          Our team created <strong>Spraoi Pots</strong> (“Spraoi” means fun in Irish): a premium Greek yogurt paired with granola. 
+          The concept focuses on <strong>locally sourced ingredients</strong>, <strong>eco-friendly packaging</strong>, and a 
+          social impact model where a portion of revenue supports <strong>Irish farmers</strong>. We explored positioning Spraoi Pots 
+          as a <em>protein-forward, grab-and-go</em> option for students, athletes, and health-conscious consumers, with an initial 
+          channel strategy of high-end markets and fairs before scaling to retailers.
+        </p>
+
+        <p>
+          As part of the project, we developed branding, unit economics, and a go-to-market plan, then delivered a final pitch to the class.
+          You can view the presentation here: 
+          <a href="college/Spraoi Pots pitch.pdf" target="_blank" rel="noopener" style="color:hsl(25 40% 25%); text-decoration:underline;">
+            Spraoi Pots Pitch (PDF)
+          </a>.
+        </p>
+
+        <!-- side-by-side photos -->
+        <!-- side-by-side photos -->
+<div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap; justify-content:center;">
+  <!-- Left image: show full photo, not cropped -->
+  <img src="college/IMG_6094.jpg" alt="Spraoi Pots concept mockup"
+       style="max-width:48%; border-radius:12px; display:block; height:auto; object-fit:contain; object-position:center; background:#fff;">
+
+  <!-- Right image: crop to remove black bars -->
+  <img src="college/IMG_6108.PNG" alt="Team presenting Spraoi Pots"
+       style="max-width:48%; border-radius:12px; display:block; aspect-ratio:4/3; height:auto; object-fit:cover; object-position:center;">
+</div>
+
+      </article>
+
+
+      <!-- Clubs & Involvement -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Clubs & Involvement</h2>
+        <p>
+          I’m involved in Lacrosse, Networking Society, Women in STEM, 
+          Sub-Aqua, AI in Medicine, and Mountaineering.
+          I serve on the executive committee of the brand-new <strong>AI in Medicine</strong> club, focusing on
+          the <strong>computer science</strong> side and collaborating with technical partners. The society is
+          still being set up, and details are actively being worked out.
+        </p>
+      </article>
+
+      <!-- College Courses -->
+<article style="margin-bottom:2rem; width:100%;">
+  <h2>College Courses</h2>
+
+  <p>
+    As part of my Computer Science with Data Science degree at UCD, I have completed a 
+    wide range of courses spanning programming, mathematics, systems, and communication. 
+    Below are the courses I’ve finished, those I am currently completing, and those 
+    planned for the coming spring semester. 
+  </p>
+
+  <!-- Completed Courses -->
+  <h3 style="margin-top:1rem;">Completed</h3>
+  <ul>
+    <li>Language Use and Communication (LING10010)</li>
+    <li>Algorithmic Problem Solving (COMP10030)</li>
+    <li>Introduction to Computer Architecture (COMP10040)</li>
+    <li>Formal Foundations (COMP10070)</li>
+    <li>Computer Programming I (COMP10110)</li>
+    <li>Functional Programming (COMP10300)</li>
+    <li>Matrix Algebra (MATH10200)</li>
+    <li>Software Engineering Project I (COMP10050)</li>
+    <li>Computer Programming II (COMP10120)</li>
+    <li>Storytelling (DSCY10100)</li>
+    <li>Foundations of Mathematics for Computer Science I (MATH10210)</li>
+    <li>Foundations of Mathematics for Computer Science II (MATH10220)</li>
+    <li>Statistics with Python (STAT10430)</li>
+    <li>Materials in Society (DSCY10070)</li>
+    <li>Digital Systems (COMP20020)</li>
+    <li>Databases and Information Systems I (COMP20070)</li>
+    <li>Discrete Mathematics for Computer Science (COMP20110)</li>
+    <li>Computer Networking (COMP20320)</li>
+    <li>Object-Oriented Programming (COMP20350)</li>
+    <li>Software Engineering Project II (COMP20050)</li>
+    <li>Intro to Operating Systems (COMP20180)</li>
+    <li>Data Structures (COMP20280)</li>
+    <li>Algorithms (COMP20290)</li>
+    <li>Linear Algebra II (MST20050)</li>
+  </ul>
+
+  <!-- In Progress -->
+  <h3 style="margin-top:1rem;">In Progress</h3>
+  <ul>
+    <li>Intro to Research and Scientific Communication (COMP31000)</li>
+    <li>Probability (STAT20200)</li>
+    <li>Data Science in Python (COMP30760)</li>
+    <li>Introduction to AI (COMP30030)</li>
+  </ul>
+
+  <!-- Planned (Spring) -->
+  <h3 style="margin-top:1rem;">Planned (Spring)</h3>
+  <ul>
+    <li>Data Science in Practice (COMP30780)</li>
+    <li>Network Analysis (COMP30850)</li>
+    <li>Programming for Big Data (COMP30770)</li>
+    <li>Information Visualisation (COMP30750)</li>
+  </ul>
+
+  <p style="margin-top:1rem;">
+    With another full year of courses still ahead, I am on track to graduate in 
+    <strong>2027</strong> with a strong foundation in computer science, mathematics, 
+    and data science.
+  </p>
+</article>
+
     </section>
   </main>
 </body>

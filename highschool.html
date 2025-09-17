@@ -3,15 +3,112 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>highschool — Josephine Burke</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>High School — Josephine Burke</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- IMPORTANT: match the College page filename -->
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Safe inline guard in case style.css doesn't have these */
+    .screen { position: relative; z-index: 2; }
+    .video-wrap { max-width: 640px; margin: 1.5rem auto; text-align: center; }
+    .video-wrap video { width: 100%; border-radius: 12px; display: block; }
+    .caption { text-align:center; font-style:italic; margin-top:.5rem; }
+  </style>
 </head>
 <body>
+  <!-- moving clouds background (same as Work/College) -->
+  <div class="clouds"></div>
+  <div class="clouds2"></div>
+
   <main class="screen" style="align-items:flex-start; padding-top:3rem;">
-    <a href="index.html" style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
-    <section class="center" style="max-width:800px;">
-      <h1>About Me</h1>
-      <p>Write a short bio here…</p>
+    <a href="index.html"
+       style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
+
+    <!-- stretch children so articles are flush-left -->
+    <section class="center" style="max-width:850px; text-align:left; align-items:stretch;">
+      <h1 class="handwritten" style="align-self:flex-start;">High School Experiences</h1>
+
+      <!-- Course Outline -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Course Outline</h2>
+
+        <h3>Technology Courses</h3>
+        <ul>
+          <li>App Dev for Mobile Devices</li>
+          <li>Intro to Computer Programming</li>
+          <li>Concepts in Tech</li>
+          <li>3D Designs and Virtual Reality</li>
+        </ul>
+
+        <h3>AP Classes</h3>
+        <ul>
+          <li>AP World History</li>
+          <li>AP Physics I</li>
+          <li>AP Computer Science (Java)</li>
+          <li>AP European History</li>
+          <li>AP Psychology</li>
+          <li>AP Physics II</li>
+        </ul>
+
+        <!-- Video (centered + smaller) -->
+        <figure class="video-wrap">
+          <video controls>
+            <source src="Bee Animation copy.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <figcaption class="caption">My final project for 3D Designs and Virtual Realities. Made with Blender.</figcaption>
+        </figure>
+      </article>
+
+      <!-- Sports & Clubs -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Sports and Clubs</h2>
+        <ul>
+          <li>2 years of JV Field Hockey</li>
+          <li>2 years of Varsity Field Hockey</li>
+          <li>4 years of Varsity Lacrosse</li>
+          <li>2 years in the Computer Science Club (helped build the program for our school’s fish tank)</li>
+          <li>4 years in the Best Buddies Club (Executive Board, Senior Year)</li>
+          <li>Head of the Philosophy Club (Senior Year)</li>
+        </ul>
+
+        <!-- One photo + caption -->
+        <div style="margin:2rem 0; text-align:center;">
+          <div style="max-width:600px; height:350px; margin:0 auto; overflow:hidden; border-radius:12px;">
+            <img src="IMG_6171.PNG" alt="Best Buddies Club in D.C."
+                 style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+          </div>
+          <p class="caption">Best Buddies Club in D.C.</p>
+        </div>
+        
+      </article>
+
+      <!-- Extra-Curriculars -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Extra-Curriculars</h2>
+
+        <h3>Year-Long Courses Outside of School</h3>
+        <ul>
+          <li><strong>The Coding School — TRAIN (AI & ML)</strong><br>
+              Implemented foundational ML models (linear regression, decision trees) in Python; examined AI ethics and bias.</li>
+          <li><strong>Introduction to Quantum Computing</strong> (Sept 2021 – Apr 2022, The Coding School — Qubit by Qubit)<br>
+              Built and ran quantum circuits in Qiskit; applied error-correction algorithms on IBM’s Quantum Platform.</li>
+        </ul>
+
+        <h3>Summer Program</h3>
+        <p>
+          <strong>University of Maryland, College Park — Young Scholars High School Program</strong> (June 2022 – July 2022)<br>
+          Earned an A and 3 college credits in International Political Relations.
+        </p>
+
+        <h3>Peer Minister (Senior Year)</h3>
+        <p>
+          Interviewed and selected from a large applicant pool to represent the school and foster a welcoming environment.
+          Responsibilities included giving tours to prospective students, being an approachable point of contact, ensuring inclusivity,
+          leading a freshman homeroom and helping students adapt to high school, leading spiritual retreats for each grade,
+          and delivering daily morning announcements.
+        </p>
+      </article>
     </section>
   </main>
 </body>

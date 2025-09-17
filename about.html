@@ -4,15 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Josephine Burke</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="screen" style="align-items:flex-start; padding-top:3rem;">
-    <a href="index.html" style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
-    <section class="center" style="max-width:800px;">
-      <h1>About Me</h1>
-      <p>Write a short bio here…</p>
+  <!-- moving clouds -->
+  <div class="clouds"></div>
+  <div class="clouds2"></div>
+  <main class="screen about-page">
+    <!-- simple back link -->
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <!-- Title and description -->
+    <header class="about-header">
+      <h1 class="handwritten">About Me</h1>
+      <p class="about-description">I'm a student at University College Dublin, studying Computer Science with Data Science. I started my computer science journey in my first year of high school, and have been in love with it since. I'm interested in many aspects of the field, and enjoy exploring different areas of it. Outside of computer science, I'm interested in scuba diving, lacrosse, field hockey, travelling, and spending time with my family and friends.</p>
+    </header>
+
+    <!-- Family Section -->
+    <section class="about-section">
+      <h2>Family</h2>
+        <div class="row reverse">
+          <img src="about me/family/IMG_0611.JPG" alt="Family selfie near the ocean">
+          <p>My immediate family and I on a trip to Bermuda.</p>
+        </div>
+        <div class="row">
+          <img src="about me/family/IMG_0781.jpg" alt="Big family group photo">
+          <p>The whole family gathered together for Christmas.</p>
+        </div>
+      </div>
     </section>
+
+    <!-- Sports Section -->
+    <section class="about-section">
+      <h2>Sports</h2>
+      <div class="about-gallery">
+        <div class="row">
+          <img src="about me/sports/High School Sports/IMG_1524.JPG" alt="St. John’s FH champs">
+          <p>St. John’s FH champs in 2022.</p>
+        </div>
+        <div class="row reverse">
+          <img src="about me/sports/High School Sports/IMG_0095.JPG" alt="Family moment by the shore">
+          <p>St. John's lacrosse trip to Florida.</p>
+        </div>
+        <div class="row">
+          <img src="about me/sports/High School Sports/IMG_4582.jpg" alt="Celebrating in red uniforms">
+          <p>Awarded MVP after our championship game.</p>
+        </div>
+        <div class="row reverse">
+          <img src="about me/sports/High School Sports/1219 gdcnsl 110622 LFA.JPEG" alt="Night game with plaque">
+          <p>Field hockey championship game in 2021.</p>
+        </div>
+        <div class="row">
+          <img src="about me/sports/Ireland Lacrosse/9e5aa676-3ead-422d-bda1-09e227e238a0.JPG" alt="UCD Lacrosse team">
+          <p>UCD Lacrosse tournament in Belfast.</p>
+        </div>
+        <div class="row reverse">
+          <img src="about me/sports/Ireland Lacrosse/IMG_7795.jpg" alt="Ireland Lacrosse squad">
+          <p>Ireland Lacrosse tournament in Portugual.</p>
+        </div>
+        <div class="row">
+          <img src="about me/sports/Ireland Lacrosse/IMG_0758.jpg" alt="Éire box lacrosse team">
+          <p>Éire box lacrosse tournament in Prague.</p>
+        </div>
+        <div class="row reverse">
+          <img src="about me/sports/scuba/scuba.JPG" alt="Éire box lacrosse team">
+          <p>Suiting up to dive in Killary.</p>
+        </div>
+        <div class="row">
+          <img src="about me/sports/scuba/IMG_7671.JPG" alt="Éire box lacrosse team">
+          <p>Going out into the sea with the scuba club.</p>
+        </div>
+      </div>
+    </section>
+
+    
   </main>
 </body>
 </html>

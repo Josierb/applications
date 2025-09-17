@@ -4,14 +4,84 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Work — Josephine Burke</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- moving clouds background -->
+  <div class="clouds"></div>
+  <div class="clouds2"></div>
+
   <main class="screen" style="align-items:flex-start; padding-top:3rem;">
-    <a href="index.html" style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
-    <section class="center" style="max-width:800px;">
-      <h1>About Me</h1>
-      <p>Write a short bio here…</p>
+    <a href="index.html" 
+       style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
+
+    <!-- stretch children so articles are flush-left -->
+    <section class="center" style="max-width:850px; text-align:left; align-items:stretch;">
+      <h1 class="handwritten" style="align-self:flex-start;">Work Experience</h1>
+
+      <!-- USMS Internship -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>United States Marshals Service Internship</h2>
+        <p><em>Investigative Operations Division — Behavioral Analysis Unit</em><br>
+           <strong>June 2025 – Aug 2025</strong></p>
+           <p>
+            During my internship at the Head Quarters of the <strong>United States Marshals Service (USMS)</strong> in the Behavioral Analysis Unit, I was handed a simple but daunting problem: investigators were working with <strong>massive, messy folders full of mixed files</strong>, and there was no efficient way to analyze them. With no step-by-step guidance—just the challenge itself—I set out to build a solution in Python. Over the summer I created a <strong>comprehensive investigative dashboard</strong> that could automatically extract text, summarize file types, run advanced searches, and visualize relationships through interactive graphs and maps. What started as a loose idea became a powerful tool that significantly cut down the time agents needed to review case materials.
+          </p>
+  
+          <p>
+            The project has grown beyond the internship. I’m continuing to refine and expand the codebase, with plans to turn it into a business venture that could support not only law enforcement, but also other organizations facing similar data challenges.
+          </p>
+  
+          <p>
+            The internship also gave me an inside look at the Marshals Service as an organization. I worked under <strong>Dr. David Bierie</strong> in the BAU, where I learned how psychologists contribute to investigations and case analysis. Along the way, I had the chance to meet leaders including the <strong>Chief of Interpol</strong>, the <strong>Chief Intelligence Officer</strong>, and the <strong>Chief Deputy Director</strong>, which gave me insight into how different parts of the agency connect and work together. We visited additional offices and met deputies from the Capital Area Regional Task Force and the Special Operations Group, as well as members of the Tactical Operations Group and the Criminal Intelligence Branch—where I saw how computer science directly supports law enforcement. One highlight was a field trip to the USMS <strong>bomb and drug detection dog training center</strong>, where I got to see how specialized canine units contribute to operations.
+          </p>
+          
+  
+          <p>
+            It was an experience that not only shaped my technical skills, but also showed me how impactful well-designed software can be when applied to real investigative work.
+          </p>
+        <!-- centered image -->
+        <div style="display:flex; justify-content:center; margin-top:1rem;">
+          <img src="about me/image001.JPG" alt="USMS Internship"
+               style="max-width:60%; border-radius:12px; display:block; height:auto; object-fit:cover;">
+        </div>
+      </article>
+
+      <!-- Quantum Computing -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Quantum Computing Research</h2>
+        <p><strong>July 2022 – Aug 2022</strong></p>
+        <p>
+          During this research program, I first reviewed the <strong>fundamentals of quantum computing</strong>—learning how to design circuits, understand qubits, and explore the challenges of noise and decoherence. From there, our group moved into building <strong>quantum error correction techniques</strong>, experimenting with approaches like repetition coding and dynamic decoupling to see how environmental noise could be reduced.
+        </p>
+
+        <p>
+          Our final project, developed under the guidance of <strong>Professor Sebastian Deffner (UMBC)</strong>, focused on demonstrating <strong>entanglement-assisted invariance (envariance)</strong> using IBM’s Quantum Experience. We created algorithms that entangled multiple qubits and tested how their states aligned under transformations. The work showed how qubits tend to “follow” one another in entangled states, while also revealing the current limitations of quantum computers (around five qubits before decoherence dominated).
+        </p>
+
+        <p>
+          The project was presented to leaders in the quantum field, highlighting both the <strong>promise of quantum entanglement and envariance for future quantum advantage</strong> and the practical limits of today’s hardware. It gave me hands-on experience not only with IBM’s platform but also with the research process of moving from theory, to coding experiments, to communicating results to experts. 
+          <a href="Copy of Entanglement.pptx" target="_blank" style="color:hsl(25 40% 25%); text-decoration:underline; margin-left:.25rem;">View Presentation</a>
+        </p>
+      </article>
+
+      <!-- Child Care -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2 style="margin-bottom:.25rem;">Child Care</h2>
+        <p><strong>June 2021 – present</strong></p>
+        <p style="margin:.5rem 0 1rem 0;">
+          For over four years I have provided childcare for the same family with three young children. Over that time, they have come to rely on me as a trusted and dependable caregiver, whether for daily routines or special occasions. Their trust has even extended to inviting me on several family vacations to Maine, where I helped care for the children while traveling. This long-term relationship has been a meaningful experience that taught me responsibility, adaptability, and how much families value consistent, reliable support.
+        </p>
+        
+        <!-- centered side-by-side photos -->
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <img src="about me/babysitting/IMG_4844.jpg" alt="Child care activity"
+               style="max-width:35%; border-radius:12px; display:block; height:auto; object-fit:cover;">
+          <img src="about me/babysitting/IMG_6186.jpg" alt="Child care playtime"
+               style="max-width:35%; border-radius:12px; display:block; height:auto; object-fit:cover;">
+        </div>
+      </article>
     </section>
   </main>
 </body>
