@@ -1,0 +1,113 @@
+/* Sunflower theme (HSL) simplified from your Tailwind tokens */
+:root{
+  --background: 45 30% 97%;
+  --foreground: 25 40% 15%;
+  --sunflower-yellow: 45 100% 60%;
+  --primary-glow: 45 100% 75%;
+  --leaf-green: 88 50% 55%;
+  --leaf-green-light: 88 40% 70%;
+  --stem-green: 95 45% 45%;
+  --warm-cream: 45 30% 97%;
+  --handwritten-brown: 25 40% 25%;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:hsl(var(--foreground));
+  background: linear-gradient(180deg, hsl(var(--warm-cream)), hsl(45 25% 92%));
+}
+
+.screen{
+  min-height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding:2rem;
+}
+
+/* Center stack */
+.center{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.25rem;
+  text-align:center;
+}
+.center h1{
+  margin:0;
+  font-size:clamp(2rem, 6vw, 4rem);
+  line-height:1.1;
+  color:hsl(var(--handwritten-brown));
+  font-family: "Kalam", "Comic Sans MS", cursive;
+}
+.avatar{
+  width:8rem;height:8rem;border-radius:50%;
+  background: radial-gradient(circle at 35% 35%, hsl(var(--primary-glow)), hsl(var(--sunflower-yellow)));
+  border:4px solid hsl(25 80% 35%);
+  box-shadow: 0 8px 32px hsl(25 40% 15% / .1);
+}
+.center-links{
+  display:flex;flex-direction:column;gap:.5rem;
+}
+.center-links a{
+  font-family:"Kalam","Comic Sans MS",cursive;
+  font-size:1.125rem;
+  color:hsl(var(--handwritten-brown));
+  text-decoration:none;
+}
+.center-links a:hover{opacity:.75}
+
+/* Sunflowers */
+.sunflower{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:8rem; height:24rem;
+}
+.sunflower.left{ left:1rem }
+.sunflower.right{ right:1rem }
+@media (min-width: 900px){
+  .sunflower.left{ left:4rem }
+  .sunflower.right{ right:4rem }
+}
+
+.head{
+  width:8rem;height:8rem; display:block; margin-inline:auto;
+  transition: transform .7s ease-in-out;
+}
+.head:hover{ transform: rotate(360deg) }
+
+.stem{
+  position:absolute; left:50%; transform:translateX(-50%);
+  top:8rem; width:.5rem; height:18rem; border-radius:1rem;
+  background:hsl(var(--stem-green));
+}
+
+/* Leaves as links */
+.leaf{
+  position:absolute;
+  width:5.5rem;height:3.25rem;border-radius:999px;
+  background: linear-gradient(120deg, hsl(var(--leaf-green)), hsl(var(--leaf-green-light)));
+  box-shadow: 0 2px 12px hsl(var(--leaf-green) / .2);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  transform-origin:center;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.leaf span{
+  font-family:"Kalam","Comic Sans MS",cursive;
+  color:hsl(var(--handwritten-brown));
+  font-size:.9rem;
+}
+.leaf:hover{ transform: scale(1.05) rotate(2deg) }
+
+/* Placement relative to stem start (8rem head + offset) */
+.leaf.left.top    { left:-1.25rem; top: 11.5rem; transform: rotate(12deg) }
+.leaf.left.bottom { left:-1.25rem; top: 17.5rem; transform: rotate(12deg) }
+.leaf.right.top   { right:-1.25rem; top: 11.5rem; transform: rotate(-12deg) }
+.leaf.right.bottom{ right:-1.25rem; top: 17.5rem; transform: rotate(-12deg) }
