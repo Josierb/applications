@@ -302,7 +302,9 @@ body{
   text-decoration: none;
   color: hsl(25, 40%, 25%);
   font-family: 'Kalam', cursive;
+
 }
+
 
 /* Side-by-side photo rows (can be global if you want) */
 .photo-row {
