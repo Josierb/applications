@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- moving clouds background (same as Work page) -->
   <div class="clouds"></div>
   <div class="clouds2"></div>
 
@@ -16,11 +15,9 @@
     <a href="index.html"
        style="position:fixed;left:1rem;top:1rem;text-decoration:none;color:hsl(25 40% 25%);font-family:'Kalam',cursive;">← Back to Home</a>
 
-    <!-- stretch children so articles are flush-left -->
     <section class="center" style="max-width:850px; text-align:left; align-items:stretch;">
       <h1 class="handwritten" style="align-self:flex-start;">College Experiences</h1>
 
-      <!-- CTF Events -->
       <article style="margin-bottom:2rem; width:100%;">
         <h2>Capture the Flag (CTF)</h2>
         <p>
@@ -28,7 +25,6 @@
           My second was <strong>Zero Days</strong>, where our team <strong>ranked in the open category</strong>.
           These events sharpened skills in web, crypto, reversing, OSINT, and fast teamwork under pressure.
         </p>
-        <!-- side-by-side photos -->
         <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap; justify-content:center;">
           <img src="college/IMG_6172.jpg" alt="CTF at Galway" 
                style="max-width:48%; border-radius:12px; display:block; height:auto; object-fit:cover;">
@@ -37,7 +33,6 @@
         </div>
       </article>
 
-      <!-- Essentials to Entrepreneurship -->
       <article style="margin-bottom:2rem; width:100%;">
         <h2>Essentials to Entrepreneurship (UCD Innovation Academy)</h2>
         <p>
@@ -66,22 +61,34 @@
           </a>.
         </p>
 
-        <!-- side-by-side photos -->
-        <!-- side-by-side photos -->
-<div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap; justify-content:center;">
-  <!-- Left image: show full photo, not cropped -->
-  <img src="college/IMG_6094.jpg" alt="Spraoi Pots concept mockup"
-       style="max-width:48%; border-radius:12px; display:block; height:auto; object-fit:contain; object-position:center; background:#fff;">
+        <div style="display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap; justify-content:center;">
+          <img src="college/IMG_6094.jpg" alt="Spraoi Pots concept mockup"
+               style="max-width:48%; border-radius:12px; display:block; height:auto; object-fit:contain; object-position:center; background:#fff;">
 
-  <!-- Right image: crop to remove black bars -->
-  <img src="college/IMG_6108.PNG" alt="Team presenting Spraoi Pots"
-       style="max-width:48%; border-radius:12px; display:block; aspect-ratio:4/3; height:auto; object-fit:cover; object-position:center;">
-</div>
-
+          <img src="college/IMG_6108.PNG" alt="Team presenting Spraoi Pots"
+               style="max-width:48%; border-radius:12px; display:block; aspect-ratio:4/3; height:auto; object-fit:cover; object-position:center;">
+        </div>
       </article>
 
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Research: Predicting Human Actions</h2>
+        <p>
+          As part of the <strong>Intro to Research and Scientific Communication</strong> module, I conducted a literature review titled 
+          <strong>"Predicting Human Actions via Computational Technologies"</strong>. The review examines how accurately computational 
+          models—using sensor data and behavioural traces—can predict individual human actions.
+        </p>
+        <p>
+          I analyzed 11 papers from the ACM database, focusing on mobility, interaction, and latent traits. The findings indicate that 
+          while hybrid models achieve high accuracy in physical tasks, predicting internal psychological states remains a complex challenge.
+        </p>
+        <p>
+          You can read the full paper here:
+          <a href="college/research_paper.pdf" target="_blank" rel="noopener" style="color:hsl(25 40% 25%); text-decoration:underline;">
+            Download Research Paper (PDF)
+          </a>
+        </p>
+      </article>
 
-      <!-- Clubs & Involvement -->
       <article style="margin-bottom:2rem; width:100%;">
         <h2>Clubs & Involvement</h2>
         <p>
@@ -93,70 +100,66 @@
         </p>
       </article>
 
-      <!-- College Courses -->
-<article style="margin-bottom:2rem; width:100%;">
-  <h2>College Courses</h2>
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>College Courses</h2>
 
-  <p>
-    As part of my Computer Science with Data Science degree at UCD, I have completed a 
-    wide range of courses spanning programming, mathematics, systems, and communication. 
-    Below are the courses I’ve finished, those I am currently completing, and those 
-    planned for the coming spring semester. 
-  </p>
+        <p>
+          As part of my Computer Science with Data Science degree at UCD, I have completed a 
+          wide range of courses spanning programming, mathematics, systems, and communication. 
+          Below are the courses I’ve finished, those I am currently completing, and those 
+          planned for the coming spring semester. 
+        </p>
 
-  <!-- Completed Courses -->
-  <h3 style="margin-top:1rem;">Completed</h3>
-  <ul>
-    <li>Language Use and Communication (LING10010)</li>
-    <li>Algorithmic Problem Solving (COMP10030)</li>
-    <li>Introduction to Computer Architecture (COMP10040)</li>
-    <li>Formal Foundations (COMP10070)</li>
-    <li>Computer Programming I (COMP10110)</li>
-    <li>Functional Programming (COMP10300)</li>
-    <li>Matrix Algebra (MATH10200)</li>
-    <li>Software Engineering Project I (COMP10050)</li>
-    <li>Computer Programming II (COMP10120)</li>
-    <li>Storytelling (DSCY10100)</li>
-    <li>Foundations of Mathematics for Computer Science I (MATH10210)</li>
-    <li>Foundations of Mathematics for Computer Science II (MATH10220)</li>
-    <li>Statistics with Python (STAT10430)</li>
-    <li>Materials in Society (DSCY10070)</li>
-    <li>Digital Systems (COMP20020)</li>
-    <li>Databases and Information Systems I (COMP20070)</li>
-    <li>Discrete Mathematics for Computer Science (COMP20110)</li>
-    <li>Computer Networking (COMP20320)</li>
-    <li>Object-Oriented Programming (COMP20350)</li>
-    <li>Software Engineering Project II (COMP20050)</li>
-    <li>Intro to Operating Systems (COMP20180)</li>
-    <li>Data Structures (COMP20280)</li>
-    <li>Algorithms (COMP20290)</li>
-    <li>Linear Algebra II (MST20050)</li>
-  </ul>
+        <h3 style="margin-top:1rem;">Completed</h3>
+        <ul>
+          <li>Language Use and Communication (LING10010)</li>
+          <li>Algorithmic Problem Solving (COMP10030)</li>
+          <li>Introduction to Computer Architecture (COMP10040)</li>
+          <li>Formal Foundations (COMP10070)</li>
+          <li>Computer Programming I (COMP10110)</li>
+          <li>Functional Programming (COMP10300)</li>
+          <li>Matrix Algebra (MATH10200)</li>
+          <li>Software Engineering Project I (COMP10050)</li>
+          <li>Computer Programming II (COMP10120)</li>
+          <li>Storytelling (DSCY10100)</li>
+          <li>Foundations of Mathematics for Computer Science I (MATH10210)</li>
+          <li>Foundations of Mathematics for Computer Science II (MATH10220)</li>
+          <li>Statistics with Python (STAT10430)</li>
+          <li>Materials in Society (DSCY10070)</li>
+          <li>Digital Systems (COMP20020)</li>
+          <li>Databases and Information Systems I (COMP20070)</li>
+          <li>Discrete Mathematics for Computer Science (COMP20110)</li>
+          <li>Computer Networking (COMP20320)</li>
+          <li>Object-Oriented Programming (COMP20350)</li>
+          <li>Software Engineering Project II (COMP20050)</li>
+          <li>Intro to Operating Systems (COMP20180)</li>
+          <li>Data Structures (COMP20280)</li>
+          <li>Algorithms (COMP20290)</li>
+          <li>Linear Algebra II (MST20050)</li>
+        </ul>
 
-  <!-- In Progress -->
-  <h3 style="margin-top:1rem;">In Progress</h3>
-  <ul>
-    <li>Intro to Research and Scientific Communication (COMP31000)</li>
-    <li>Probability (STAT20200)</li>
-    <li>Data Science in Python (COMP30760)</li>
-    <li>Introduction to AI (COMP30030)</li>
-  </ul>
+        <h3 style="margin-top:1rem;">In Progress</h3>
+        <ul>
+          <li>Intro to Research and Scientific Communication (COMP31000)</li>
+          <li>Probability (STAT20200)</li>
+          <li>Data Science in Python (COMP30760)</li>
+          <li>Introduction to AI (COMP30030)</li>
+        </ul>
 
-  <!-- Planned (Spring) -->
-  <h3 style="margin-top:1rem;">Planned (Spring)</h3>
-  <ul>
-    <li>Data Science in Practice (COMP30780)</li>
-    <li>Network Analysis (COMP30850)</li>
-    <li>Programming for Big Data (COMP30770)</li>
-    <li>Information Visualisation (COMP30750)</li>
-  </ul>
+        <h3 style="margin-top:1rem;">Planned (Spring)</h3>
+        <ul>
+          <li>Data Science in Practice (COMP30780)</li>
+          <li>Network Analysis (COMP30850)</li>
+          <li>Programming for Big Data (COMP30770)</li>
+          <li>Information Visualisation (COMP30750)</li>
+        </ul>
 
-  <p style="margin-top:1rem;">
-    With another full year of courses still ahead, I am on track to graduate in 
-    <strong>2027</strong> with a strong foundation in computer science, mathematics, 
-    and data science.
-  </p>
-</article>
+        <p style="margin-top:1rem;">
+          With another full year of courses still ahead, I am on track to graduate in 
+          <strong>2027</strong> with a strong foundation in computer science, mathematics, 
+          and data science.
+        </p>
+      </article>
 
     </section>
   </main>
