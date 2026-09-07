@@ -129,7 +129,12 @@
 
     <section class="center">
       <h1 class="handwritten">Josephine<br>Burke</h1>
+      <p class="tagline">Computer Science &amp; Data Science student @ UCD · Class of 2027</p>
       <div class="avatar"><img src="profile.PNG" alt="Josephine Burke"></div>
+      <div class="badges">
+        <span class="badge">🏦 Scotiabank Tech Intern '26</span>
+        <span class="badge badge-glow">✦ Accepted to HackMIT 2026</span>
+      </div>
       <nav class="center-links">
         <a href="https://github.com/Josierb" target="_blank" rel="noopener" class="center-link">Github</a>
         <a href="https://www.linkedin.com/in/josie-burke-7ab100280/" target="_blank" rel="noopener" class="center-link">LinkedIn</a>
@@ -137,5 +142,34 @@
       </nav>
     </section>
   </main>
+
+  <script>
+  (function(){
+    function burst(svgEl){
+      var rect = svgEl.getBoundingClientRect();
+      var cx = rect.left + rect.width/2;
+      var cy = rect.top + rect.height/2;
+      var colors = ['#ffd23f','#ffb703','#fca311'];
+      for(var i=0;i<10;i++){
+        var p = document.createElement('div');
+        p.className='petal';
+        var angle = (Math.PI*2*i)/10 + Math.random()*0.4;
+        var dist = 60 + Math.random()*40;
+        p.style.setProperty('--dx', Math.cos(angle)*dist+'px');
+        p.style.setProperty('--dy', Math.sin(angle)*dist+'px');
+        p.style.left = cx+'px';
+        p.style.top = cy+'px';
+        p.style.background = colors[i % colors.length];
+        document.body.appendChild(p);
+        (function(el){ el.addEventListener('animationend', function(){ el.remove(); }); })(p);
+      }
+    }
+    document.querySelectorAll('.head').forEach(function(h){
+      h.style.cursor = 'pointer';
+      h.setAttribute('aria-label', 'Click for a surprise');
+      h.addEventListener('click', function(){ burst(h); });
+    });
+  })();
+  </script>
 </body>
 </html>

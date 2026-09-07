@@ -317,3 +317,101 @@ body{
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
+
+
+/* ===== Site refresh 2026: badges, tagline, content cards, course accordion, petal burst ===== */
+
+.tagline{
+  font-family:'Kalam','Comic Sans MS',cursive;
+  font-size:1.05rem;
+  color:hsl(var(--handwritten-brown));
+  margin:-.5rem 0 .25rem 0;
+  opacity:.9;
+}
+
+.badges{
+  display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; margin:.25rem 0 .5rem 0;
+}
+.badge{
+  font-family:'Kalam','Comic Sans MS',cursive;
+  font-size:.85rem;
+  padding:.35rem .9rem;
+  border-radius:999px;
+  background: var(--gradient-leaf);
+  color:#fff;
+  box-shadow: var(--shadow-leaf);
+  transition: transform .2s ease;
+  display:inline-block;
+  white-space:nowrap;
+}
+.badge:hover{ transform: translateY(-2px) scale(1.04); }
+.badge.badge-glow{
+  background: var(--gradient-sunflower);
+  color: hsl(var(--sunflower-center));
+  animation: badgeGlow 2.4s ease-in-out infinite;
+}
+@keyframes badgeGlow{
+  0%,100%{ box-shadow: 0 0 0 0 hsl(var(--sunflower-yellow) / .5); }
+  50%{ box-shadow: 0 0 14px 4px hsl(var(--sunflower-yellow) / .5); }
+}
+
+/* Content cards on Work / College / High School pages */
+main.screen .center > article{
+  background: rgba(255,255,255,.55);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-organic);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+main.screen .center > article:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px hsl(25 40% 15% / 0.16);
+}
+
+/* Course-year accordion (College page) */
+details.course-year{
+  margin: .75rem 0;
+  background: rgba(255,255,255,.6);
+  border-radius: 14px;
+  padding: .25rem 1rem;
+  border: 1px solid hsl(var(--leaf-green) / .25);
+}
+details.course-year summary{
+  cursor:pointer;
+  font-family:'Kalam','Comic Sans MS',cursive;
+  font-weight:700;
+  padding: .85rem .25rem;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+details.course-year summary::-webkit-details-marker{ display:none; }
+details.course-year summary::before{
+  content:'\1F33B';
+  display:inline-block;
+  transition: transform .25s ease;
+}
+details.course-year[open] summary::before{ transform: rotate(90deg); }
+details.course-year ul{ margin:.25rem 0 .75rem 0; }
+
+/* Petal burst (click a sunflower head) */
+.petal{
+  position:fixed;
+  width:10px; height:16px;
+  border-radius:50% 50% 50% 0;
+  pointer-events:none;
+  z-index:50;
+  transform: translate(-50%,-50%);
+  animation: petalFly .7s ease-out forwards;
+}
+@keyframes petalFly{
+  to{
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(180deg);
+    opacity:0;
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  .petal{ display:none; }
+  .badge.badge-glow{ animation:none; }
+}

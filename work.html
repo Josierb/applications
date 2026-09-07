@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Work — Josephine Burke</title>
+  <title>Work - Josephine Burke</title>
   <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -20,21 +20,61 @@
     <section class="center" style="max-width:850px; text-align:left; align-items:stretch;">
       <h1 class="handwritten" style="align-self:flex-start;">Work Experience</h1>
 
+      <!-- Scotiabank Internship -->
+      <article style="margin-bottom:2rem; width:100%;">
+        <h2>Scotiabank Technology Internship</h2>
+        <p><em>Trading Support Europe, Front Office Technology</em><br>
+           <strong>Summer 2026</strong> · Dublin, working closely with the team in London</p>
+        <p>
+          I spent the summer as a technology intern on Scotiabank's <strong>Trading Support Europe</strong> team,
+          split across two projects and reporting to managers in both London and Dublin.
+        </p>
+        <p>
+          My main project was mapping the front office's system dependencies and building a
+          <strong>trading analytics dashboard</strong> on top of <strong>ION MMI</strong>, the desk's trading data
+          platform. The hardest part was getting used to the data and ensuring data quality. I had no previous background in 
+          finance or trading, so I had to pick it up quickly throughout the intenrship. MMI logs every trader interaction with 
+          a trade, so the same
+          economic trade could show up under several different trade IDs. I built a deduplication approach by
+          filtering out internal source IDs, then catching the remaining duplicates by matching on notional,
+          settlement amount, trader, and timestamp, and used <strong>SQL through Dremio</strong> to produce a clean, 
+          unique view of trades by venue, price, yield, client, and
+          date. I also mapped raw exchange codes to readable market names since
+          the data platform only stores the MIC codes.
+        </p>
+        <p>
+          Alongside a fellow intern who built out the FastAPI/React front end, I picked up
+          <strong>React and TypeScript</strong> myself to help get the full stack running end-to-end on the team's
+          VM, while owning the data platform side.
+        </p>
+        <p>
+          My Dublin manager also had me automate <strong>PowerPoint slide generation using VBA in Excel</strong>, which was
+          a completely different kind of problem that pushed me into a corner of the Microsoft stack I hadn't
+          touched before.
+        </p>
+        <p>
+          Beyond the code, the internship taught me how a trading floor actually works. I learned about bonds, opportunity cost,
+          inflation, the mechanics of a trade, and how to navigate a large organization: bank-specific Git norms,
+          secure coding and data-handling practices, and just asking more questions. I came out of this experience
+          a lot more comfortable putting myself out there, which I'm planning to keep building on.
+        </p>
+      </article>
+
       <!-- USMS Internship -->
       <article style="margin-bottom:2rem; width:100%;">
         <h2>United States Marshals Service Internship</h2>
-        <p><em>Investigative Operations Division — Behavioral Analysis Unit</em><br>
+        <p><em>Investigative Operations Division | Behavioral Analysis Unit</em><br>
            <strong>June 2025 – Aug 2025</strong></p>
            <p>
-            During my internship at the Head Quarters of the <strong>United States Marshals Service (USMS)</strong> in the Behavioral Analysis Unit, I was handed a simple but daunting problem: investigators were working with <strong>massive, messy folders full of mixed files</strong>, and there was no efficient way to analyze them. With no step-by-step guidance—just the challenge itself—I set out to build a solution in Python. Over the summer I created a <strong>comprehensive investigative dashboard</strong> that could automatically extract text, summarize file types, run advanced searches, and visualize relationships through interactive graphs and maps. What started as a loose idea became a powerful tool that significantly cut down the time agents needed to review case materials.
+            During my internship at the Head Quarters of the <strong>United States Marshals Service (USMS)</strong> in the Behavioral Analysis Unit, I was handed a simple but daunting problem: investigators were working with <strong>massive, messy folders full of mixed files</strong>, and there was no efficient way to analyze them. With no step-by-step guidance, just the challenge itself. I set out to build a solution in Python. Over the summer I created a <strong>comprehensive investigative dashboard</strong> that could automatically extract text, summarize file types, run advanced searches, and visualize relationships through interactive graphs and maps. It ended up being a powerful tool that significantly cut down the time agents needed to review case materials.
           </p>
   
           <p>
-            The project has grown beyond the internship. I’m continuing to refine and expand the codebase, with plans to turn it into a business venture that could support not only law enforcement, but also other organizations facing similar data challenges.
+            The project has grown beyond the internship. I’m continuing to refine and expand the codebase, with an idea to turn it into a business venture that could support not only law enforcement, but also other organizations facing similar data challenges.
           </p>
   
           <p>
-            The internship also gave me an inside look at the Marshals Service as an organization. I worked under <strong>Dr. David Bierie</strong> in the BAU, where I learned how psychologists contribute to investigations and case analysis. Along the way, I had the chance to meet leaders including the <strong>Chief of Interpol</strong>, the <strong>Chief Intelligence Officer</strong>, and the <strong>Chief Deputy Director</strong>, which gave me insight into how different parts of the agency connect and work together. We visited additional offices and met deputies from the Capital Area Regional Task Force and the Special Operations Group, as well as members of the Tactical Operations Group and the Criminal Intelligence Branch—where I saw how computer science directly supports law enforcement. One highlight was a field trip to the USMS <strong>bomb and drug detection dog training center</strong>, where I got to see how specialized canine units contribute to operations.
+            The internship also gave me an inside look at the Marshals Service as an organization. I worked under <strong>Dr. David Bierie</strong> in the BAU, where I learned how psychologists contribute to investigations and case analysis. Along the way, I had the chance to meet leaders including the <strong>Chief of Interpol</strong>, the <strong>Chief Intelligence Officer</strong>, and the <strong>Chief Deputy Director</strong>, which gave me insight into how different parts of the agency connect and work together. We visited additional offices and met deputies from the Capital Area Regional Task Force and the Special Operations Group, as well as members of the Tactical Operations Group and the Criminal Intelligence Branch where I saw how computer science directly supports law enforcement. One highlight was a field trip to the USMS <strong>bomb and drug detection dog training center</strong>, where I got to see how specialized canine units contribute to operations.
           </p>
           
   
@@ -53,7 +93,7 @@
         <h2>Quantum Computing Research</h2>
         <p><strong>July 2022 – Aug 2022</strong></p>
         <p>
-          During this research program, I first reviewed the <strong>fundamentals of quantum computing</strong>—learning how to design circuits, understand qubits, and explore the challenges of noise and decoherence. From there, our group moved into building <strong>quantum error correction techniques</strong>, experimenting with approaches like repetition coding and dynamic decoupling to see how environmental noise could be reduced.
+          During this research program, I first reviewed the <strong>fundamentals of quantum computing</strong> and learned how to design circuits, understand qubits, and explore the challenges of noise and decoherence. From there, our group moved into building <strong>quantum error correction techniques</strong>, experimenting with approaches like repetition coding and dynamic decoupling to see how environmental noise could be reduced.
         </p>
 
         <p>
